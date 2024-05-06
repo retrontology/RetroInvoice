@@ -1,0 +1,20 @@
+sender:
+  name: Retrontology
+  addr:
+    line1: Austin, TX
+    line2: USA
+  email: retrontology@gmail.com
+receiver:
+  name: OMEGACorp LLC
+  addr:
+    line1: Frankfurt, Hesse
+    line2: Germany
+  email: lorenzosoil@omega.com
+invoiceNumber: 1
+logo: logo.svg
+items:
+  - name: Some kinda thing
+    rate: 50
+    hours: 8
+  - name: Some other kinda thing
+    rate: 300
