@@ -11,7 +11,7 @@ receiver:
     line2: Germany
   email: lorenzosoil@omega.com
 invoiceNumber: 1
-logo: logo.svg
+logo: logo.png
 items:
   - name: Some kinda thing
     rate: 50
