@@ -158,7 +158,9 @@
                                 <td>
                                     Invoice #: {{ '%05d' % invoiceNumber }}<br />
                                     Created: {{ createdDate }}<br />
-                                    Due: {{ dueDate }}
+                                    {% if dueDate != "" %}
+                                        Due: {{ dueDate }}
+                                    {% endif %}
                                 </td>
                             </tr>
                         </table>
@@ -188,7 +190,7 @@
                 </tr>
 
                 <tr class="heading">
-                    <td>Item</td>
+                    <td>Description</td>
                     <td>Rate</td>
                     <td>Hours</td>
                     <td>Price</td>

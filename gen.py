@@ -27,7 +27,6 @@ def calc_totals(data):
     data['total'] = total
     return data
 
-
 def load_data(data_file):
     with open(data_file, 'r') as infile:
         data = yaml.safe_load(infile)
@@ -40,11 +39,14 @@ def load_template(template_file):
         template = Template(infile.read())
     return template
 
-def generate_invoice(template, data):
+def generate_invoice(template, data, due_months=None):
     generatedDate = datetime.datetime.now()
-    dueDate = generatedDate + relativedelta(months=+1)
     data['createdDate'] = generatedDate.strftime(DATE_FORMAT)
-    data['dueDate'] = dueDate.strftime(DATE_FORMAT)
+    if due_months: 
+        dueDate = generatedDate + relativedelta(months=+due_months)
+        data['dueDate'] = dueDate.strftime(DATE_FORMAT)
+    else:
+        data['dueDate'] = ""
     invoice = template.render(data)
     return invoice
 
